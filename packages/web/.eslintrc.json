@@ -25,9 +25,12 @@
     "prettier"
   ],
   "rules": {
+    "jsx-a11y/label-has-associated-control": "off",
     "no-use-before-define": "off",
+    "react/jsx-props-no-spreading": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "prettier/prettier": "error",
+    "react/prop-types": "off",
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
