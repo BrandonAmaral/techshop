@@ -32,6 +32,8 @@ class CreateProductService {
       throw new AppError('No admin permission');
     }
 
+    const name = product.split(/[,/ ]/).join('-');
+
     const products = Product.create({
       product,
       price,
@@ -40,6 +42,7 @@ class CreateProductService {
       inStock,
       description,
       image,
+      productName: name.toLowerCase(),
     });
 
     return products;

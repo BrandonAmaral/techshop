@@ -1,9 +1,8 @@
 import styled from 'styled-components';
-import { shade } from 'polished';
 
 export const Container = styled.div`
   height: 3em;
-  background: #23262a;
+  background: var(--primary);
   font-size: 1em;
   display: flex;
   align-items: center;
@@ -15,11 +14,12 @@ export const Container = styled.div`
     font-size: 1.5em;
     text-decoration: none;
     font-weight: bold;
-    color: #fff;
+    color: #e3e3e3;
     margin-left: 1em;
+    transition: color 0.3s;
 
     &:hover {
-      color: ${shade(0.3, '#fff')};
+      color: #2e26de;
     }
 
     span {
@@ -39,9 +39,10 @@ export const Nav = styled.nav`
     font-weight: bold;
     color: #fff;
     padding: 1rem;
+    transition: color 0.3s;
 
     &:hover {
-      color: ${shade(0.3, '#fff')};
+      color: #2e26de;
     }
 
     &:last-child {

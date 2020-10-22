@@ -1,11 +1,13 @@
 import React, { useCallback } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+
 import * as Yup from 'yup';
 import { Form, Formik, ErrorMessage } from 'formik';
 
 import { Container, Content } from './styles';
-import Input from '../../components/InputAuth';
-import Button from '../../components/ButtonAuth';
+import Input from '../../components/Input';
+import Button from '../../components/Button';
+import Label from '../../components/Label';
 import api from '../../services/api';
 
 interface RegisterFormData {
@@ -41,6 +43,7 @@ const Register: React.FC = () => {
   return (
     <Container>
       <Content>
+        <h1>Create an account</h1>
         <Formik
           initialValues={{
             email: '',
@@ -52,25 +55,26 @@ const Register: React.FC = () => {
           validationSchema={validationSchema}
           validateOnBlur={false}
           validateOnMount={false}
+          validateOnChange={false}
         >
           <Form>
-            <h1>Register</h1>
-
-            <label>Email</label>
+            <Label>Email</Label>
             <Input name="email" autoComplete="off" />
             <ErrorMessage name="email" />
 
-            <label>Username</label>
+            <Label>Username</Label>
             <Input name="username" autoComplete="off" />
             <ErrorMessage name="username" />
 
-            <label>Password</label>
+            <Label>Password</Label>
             <Input name="password" type="password" />
             <ErrorMessage name="password" />
 
-            <label>Confirm Password</label>
+            <Label>Confirm Password</Label>
             <Input name="password_confirm" type="password" />
             <ErrorMessage name="password_confirm" />
+
+            <Link to="/login">Already have an account?</Link>
 
             <Button type="submit">Register</Button>
           </Form>

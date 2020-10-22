@@ -2,8 +2,10 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   :root {
-    --secondary: #2f3136;
-    --tertiary: #292b2f;
+    --primary: #23262a;
+    --secondary: #3129d6;
+    --font-color: #e3e3e3;
+    --error: #c7182c;
   }
 
   * {
@@ -15,6 +17,7 @@ export default createGlobalStyle`
   html, body, #root {
     height: 100%;
     -webkit-font-smoothing: antialiased;
+    background-color: #cccccc;
   }
 
   *, button, input {

@@ -8,6 +8,7 @@ export type UserAttributes = {
   inStock: number;
   description: string;
   image: string;
+  productName: string;
 };
 
 export type ProductDocument = Document & UserAttributes;
@@ -51,6 +52,11 @@ const ProductSchema = new Schema(
     image: {
       type: String,
       required: true,
+    },
+    productName: {
+      type: String,
+      required: true,
+      unique: true,
     },
   },
   {

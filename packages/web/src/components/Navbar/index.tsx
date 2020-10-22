@@ -6,8 +6,7 @@ import logo from '../../assets/logo.png';
 import { useAuth } from '../../hooks/auth';
 
 const Sidebar: React.FC = () => {
-  const { user } = useAuth();
-  const { logout } = useAuth();
+  const { user, logout } = useAuth();
 
   const logoutFunction = useCallback(() => {
     logout();
@@ -17,7 +16,7 @@ const Sidebar: React.FC = () => {
     <Container>
       <NavLink to="/">
         <img src={logo} alt="logo" />
-        <span>E-COMMERCE</span>
+        <span>TechShop</span>
       </NavLink>
       <Nav>
         <NavLink to="/cart">Cart</NavLink>
